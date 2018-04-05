@@ -20,10 +20,15 @@ sfaRouter.route('/task').get(sfaProcessesController.getEmpJt);
 
 //Ticket
 sfaRouter.route('/ticket').post(sfaJTController.postJt).get(sfaJTController.getAllJt);
+sfaRouter.route('/jobticket').get(sfaJTController.getParticularJt);
 
 sfaRouter.route('/update').post(sfaProcessesController.updateProgress);
 
 //Update progress
+
+
+
+//test
 sfaRouter.route('/test').get(test.getAllJt);
 
 module.exports = sfaRouter;

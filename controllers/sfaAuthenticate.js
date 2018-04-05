@@ -47,6 +47,8 @@ var register = function(request,response){
             }
 
         });
+
+        client.close();
     });
 };
 
@@ -87,6 +89,8 @@ var login = function(request,response){
                 response.send(js);
             }
         });
+
+        client.close();
     });
 };
 
@@ -98,6 +102,8 @@ var getEmployees = function(request,response){
             if(err) throw err;
             response.send(employees);
         });
+
+        client.close();
     });
 };
 

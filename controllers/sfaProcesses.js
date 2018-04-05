@@ -876,6 +876,8 @@ var updateProgress = function(request, response){
             }
 
         });
+
+        client.close();
     });
 };
 

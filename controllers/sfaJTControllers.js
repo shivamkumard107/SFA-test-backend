@@ -17,6 +17,7 @@ var getAllJt = function(request, response){
             response.send(jobTicket);
         });
 
+        client.close();
     });
 
 };
@@ -97,14 +98,35 @@ var postJt = function(request,response){
 
 
         });
+
+        client.close();
     });
 };
 
+var getParticularJt = function(request, response){
+    mongoClient.connect(url, function(err, client){
+        var db = client.db('SfaDb');
+
+
+        var query = {
+            wt : request.query.wt
+        };
+
+        db.collection('JobTicket').findOne(query, function (err, ticket) {
+            if(err) throw err;
+            response.send(ticket);
+        });
+
+        client.close();
+    });
+
+};
 
 
 
 
 module.exports = {
     getAllJt : getAllJt,
-    postJt : postJt
+    postJt : postJt,
+    getParticularJt : getParticularJt
 };
