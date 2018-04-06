@@ -1,11 +1,13 @@
 var mongoDb = require('mongodb');
 var mongoClient = mongoDb.MongoClient;
 var uniqid = require('uniqid');
-var url = require('./../app.js').baseUrl;
+var url = require('./../routes/globalAccess.js').baseUrl;
+var dbName = require('./../routes/globalAccess.js').dbName;
+
 
 var getAllJt = function(request, response){
     mongoClient.connect(url, function(err, client){
-        var db = client.db('SfaDb');
+        var db = client.db(dbName);
 
         db.collection('JobTicket').find().toArray(function(err, jobTicket){
             if(err) throw err;
@@ -32,7 +34,7 @@ var getAllJt = function(request, response){
 
 var postJt = function(request,response){
     mongoClient.connect(url,function(err,client){
-        var db = client.db('SfaDb');
+        var db = client.db(dbName);
 
         var jt =
             {
@@ -103,7 +105,7 @@ var postJt = function(request,response){
 
 var getParticularJt = function(request, response){
     mongoClient.connect(url, function(err, client){
-        var db = client.db('SfaDb');
+        var db = client.db(dbName);
 
 
         var query = {

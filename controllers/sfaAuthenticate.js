@@ -3,11 +3,12 @@
 var mongoDb = require('mongodb');
 var mongoClient = mongoDb.MongoClient;
 var uniqid = require('uniqid');
-var url = require('./../app.js').baseUrl;
+var url = require('./../routes/globalAccess.js').baseUrl;
+var dbName = require('./../routes/globalAccess.js').dbName;
 
 var register = function(request,response){
     mongoClient.connect(url,function(err,client){
-        var db = client.db('SfaDb');
+        var db = client.db(dbName);
 
         var query = {
             mobile : request.body.mobile
@@ -54,7 +55,7 @@ var register = function(request,response){
 
 var login = function(request,response){
     mongoClient.connect(url,function(err,client){
-        var db = client.db('SfaDb');
+        var db = client.db(dbName);
 
         // console.log(request.body.mobile + " "+ request.body.pass);
 
@@ -97,7 +98,7 @@ var login = function(request,response){
 var getEmployees = function(request,response){
     mongoClient.connect(url,function(err,client){
 
-        var db = client.db('SfaDb');
+        var db = client.db(dbName);
         db.collection('employee').find().toArray(function(err,employees){
             if(err) throw err;
             response.send(employees);

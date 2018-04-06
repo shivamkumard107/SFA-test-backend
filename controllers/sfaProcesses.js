@@ -2,13 +2,14 @@ var mongoDb = require('mongodb');
 var mongoClient = mongoDb.MongoClient;
 var uniqid = require('uniqid');
 
-var url = require('./../app.js').baseUrl;
+var url = require('./../routes/globalAccess.js').baseUrl;
+var dbName = require('./../routes/globalAccess.js').dbName;
 
 var postJTProcesses = function(request, response){
 
     console.log(request.body);
     mongoClient.connect(url, function(err, client){
-        var db = client.db('SfaDb');
+        var db = client.db(dbName);
 
         var jobType = request.body.job_type;
 
@@ -452,7 +453,7 @@ var postJTProcesses = function(request, response){
 
 var getAllJTProcesses = function(request, response){
     mongoClient.connect(url, function(err, client){
-        var db = client.db('SfaDb');
+        var db = client.db(dbName);
         db.collection('JobTicketProcesses').find().toArray(function(err, resp){
             if(err) throw err;
             response.send(resp);
@@ -669,7 +670,7 @@ function getQuery(emp){
 var getEmpJt = function(request, response){
     mongoClient.connect(url, function(err, client){
 
-        var db = client.db('SfaDb');
+        var db = client.db(dbName);
 
         // console.log(request.query.emp);
         var emp = request.query.emp;
@@ -708,7 +709,7 @@ var getEmpJt = function(request, response){
 //http://localhost:3000/update?emp=designing&wt=wtID
 var updateProgress = function(request, response){
     mongoClient.connect(url, function(err, client){
-        var db = client.db('SfaDb');
+        var db = client.db(dbName);
 
 
         db.collection('JobTicketProcesses').findOne({ wt_id : request.query.wt }, function(err, ticketProcesses){
