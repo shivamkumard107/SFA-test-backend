@@ -7,6 +7,7 @@ var logger = require('morgan');
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 var sfaRouter = require('./routes/sfaRouter');
+var baseUrl = 'mongodb://samarthgupta1011:samarthgupta@ds121225.mlab.com:21225/sfadb';
 
 var app = express();
 
@@ -40,4 +41,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+module.exports = {
+  app : app,
+  baseUrl : baseUrl
+};

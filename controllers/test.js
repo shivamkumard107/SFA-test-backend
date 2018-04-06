@@ -2,7 +2,7 @@ var mongoClient = require("mongodb").MongoClient;
 /* GET home page. */
 
 
-var url = 'mongodb://localhost/SfaDb';
+var url = require('./../app.js').baseUrl;
 
 
 var getAllJt = function(request, response){

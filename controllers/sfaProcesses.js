@@ -2,7 +2,7 @@ var mongoDb = require('mongodb');
 var mongoClient = mongoDb.MongoClient;
 var uniqid = require('uniqid');
 
-var url = 'mongodb://localhost/SfaDb';
+var url = require('./../app.js').baseUrl;
 
 var postJTProcesses = function(request, response){
 
