@@ -19,7 +19,7 @@ var getAllJt = function(request, response){
             response.send(jobTicket);
         });
 
-        client.close();
+        // client.close();
     });
 
 };

@@ -49,7 +49,7 @@ var register = function(request,response){
 
         });
 
-        client.close();
+        // client.close();
     });
 };
 
@@ -83,7 +83,7 @@ var login = function(request,response){
                     pass : null,
                     dept : null,
                     status : false
-                }
+                };
                 console.log("False");
 
                 // console.log(js);
@@ -91,7 +91,7 @@ var login = function(request,response){
             }
         });
 
-        client.close();
+        // client.close();
     });
 };
 
@@ -104,7 +104,7 @@ var getEmployees = function(request,response){
             response.send(employees);
         });
 
-        client.close();
+        // client.close();
     });
 };
 

@@ -653,7 +653,7 @@ function getQuery(emp){
             "processes.cover.creasing.isRequired" : true
         };
 
-    } else if(emp == 'binding'){
+    } else if(emp === 'binding'){
         q = {
             "processes.cover.binding.isRequired" : true
         };
@@ -878,7 +878,7 @@ var updateProgress = function(request, response){
 
         });
 
-        client.close();
+        // client.close();
     });
 };
 

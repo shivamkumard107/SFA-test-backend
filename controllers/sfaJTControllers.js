@@ -17,7 +17,7 @@ var getAllJt = function(request, response){
             response.send(jobTicket);
         });
 
-        client.close();
+        // client.close();
     });
 
 };
@@ -99,7 +99,7 @@ var postJt = function(request,response){
 
         });
 
-        client.close();
+        // client.close();
     });
 };
 
@@ -117,7 +117,7 @@ var getParticularJt = function(request, response){
             response.send(ticket);
         });
 
-        client.close();
+        // client.close();
     });
 
 };
