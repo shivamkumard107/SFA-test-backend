@@ -3,7 +3,7 @@ var mongoClient = mongoDb.MongoClient;
 var uniqid = require('uniqid');
 
 
-var url = 'mongodb://localhost/SfaDb';
+var url = 'mongodb://samarthgupta1011:samarthgupta@ds121225.mlab.com:21225/sfadb';
 
 var getAllJt = function(request, response){
     mongoClient.connect(url, function(err, client){
