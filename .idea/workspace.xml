@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7979e5a2-2d3c-486c-b0cb-cf65bec32fbc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/sfaJTControllers.js" afterPath="$PROJECT_DIR$/controllers/sfaJTControllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/sfaProcesses.js" afterPath="$PROJECT_DIR$/controllers/sfaProcesses.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/globalAccess.js" afterPath="$PROJECT_DIR$/routes/globalAccess.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,21 +47,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="globalAccess.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="globalAccess.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/globalAccess.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="90">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="9" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sfaProcesses.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sfaProcesses.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/sfaProcesses.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="734" column="47" lean-forward="false" selection-start-line="734" selection-start-column="47" selection-end-line="734" selection-end-column="47" />
+            <state relative-caret-position="387">
+              <caret line="703" column="31" lean-forward="false" selection-start-line="703" selection-start-column="31" selection-end-line="703" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -90,8 +88,8 @@
         <option value="$PROJECT_DIR$/controllers/test.js" />
         <option value="$PROJECT_DIR$/routes/sfaRouter.js" />
         <option value="$PROJECT_DIR$/controllers/sfaJTControllers.js" />
-        <option value="$PROJECT_DIR$/controllers/sfaProcesses.js" />
         <option value="$PROJECT_DIR$/routes/globalAccess.js" />
+        <option value="$PROJECT_DIR$/controllers/sfaProcesses.js" />
       </list>
     </option>
   </component>
@@ -205,12 +203,12 @@
       <workItem from="1523045507228" duration="4144000" />
       <workItem from="1523051727282" duration="194000" />
       <workItem from="1523106737274" duration="1565000" />
-      <workItem from="1523212330419" duration="434000" />
+      <workItem from="1523212330419" duration="596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11257000" />
+    <option name="totallyTimeSpent" value="11419000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -474,10 +472,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/sfaProcesses.js">
+    <entry file="file://$PROJECT_DIR$/routes/globalAccess.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="734" column="47" lean-forward="false" selection-start-line="734" selection-start-column="47" selection-end-line="734" selection-end-column="47" />
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="9" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -490,10 +488,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/globalAccess.js">
+    <entry file="file://$PROJECT_DIR$/controllers/sfaProcesses.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
+        <state relative-caret-position="387">
+          <caret line="703" column="31" lean-forward="false" selection-start-line="703" selection-start-column="31" selection-end-line="703" selection-end-column="31" />
           <folding />
         </state>
       </provider>

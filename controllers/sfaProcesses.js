@@ -700,8 +700,8 @@ var getEmpJt = function(request, response){
         ]).toArray(function (mongoError, resp) {
            if(mongoError) throw mongoError;
 
-           console.log(JSON.stringify(resp[0]));
-           response.send(JSON.stringify(resp));
+           console.log(resp);
+           response.send(resp);
 
         });
 
