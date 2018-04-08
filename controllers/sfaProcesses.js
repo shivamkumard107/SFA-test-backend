@@ -1,6 +1,7 @@
 var mongoDb = require('mongodb');
 var mongoClient = mongoDb.MongoClient;
 var uniqid = require('uniqid');
+var util = require("util");
 
 var url = require('./../routes/globalAccess.js').baseUrl;
 var dbName = require('./../routes/globalAccess.js').dbName;
@@ -675,6 +676,7 @@ var getEmpJt = function(request, response){
         // console.log(request.query.emp);
         var emp = request.query.emp;
 
+        console.log(emp);
         console.log(getQuery(emp));
         var query = getQuery(emp);
 
@@ -690,19 +692,22 @@ var getEmpJt = function(request, response){
                         foreignField: "wt_id",
                         as: "processes"
                     }
-            },
+            }
+            ,
             {
                 $match : query
             }
-        ], function(err, resp){
+        ]).toArray(function (mongoError, resp) {
+           if(mongoError) throw mongoError;
 
-            if(err) throw err;
-            response.send(resp);
+           console.log(JSON.stringify(resp[0]));
+           response.send(JSON.stringify(resp));
 
         });
 
+
     });
-}
+};
 
 
 
