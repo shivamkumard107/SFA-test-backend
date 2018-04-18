@@ -4,6 +4,7 @@ var sfaRouter = express.Router();
 var sfaJTController = require('./../controllers/sfaJTControllers');
 var sfaProcessesController = require('./../controllers/sfaProcesses');
 var sfaAuthenticate = require('./../controllers/sfaAuthenticate');
+var sfaRegex = require('./../controllers/sfaRegexTicket');
 
 var test = require('./../controllers/test');
 
@@ -22,13 +23,20 @@ sfaRouter.route('/task').get(sfaProcessesController.getEmpJt);
 sfaRouter.route('/ticket').post(sfaJTController.postJt).get(sfaJTController.getAllJt);
 sfaRouter.route('/jobticket').get(sfaJTController.getParticularJt);
 
-sfaRouter.route('/update').post(sfaProcessesController.updateProgress);
+
 
 //Update progress
-
+sfaRouter.route('/update').post(sfaProcessesController.updateProgress);
 
 
 //test
 sfaRouter.route('/test').get(test.getAllJt);
+
+//Regex by Client name
+//task/client?emp=printing&reg=str
+sfaRouter.route('/task/client').get(sfaRegex.getTaskByClientRegex);
+//task/job?emp=printing&reg=str
+sfaRouter.route('/task/jobname').get(sfaRegex.getTaskByJobNameRegex);
+
 
 module.exports = sfaRouter;

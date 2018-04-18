@@ -462,7 +462,7 @@ var getAllJTProcesses = function(request, response){
     });
 };
 
-function getQuery(emp){
+var getQuery = function getQuery(emp){
 
     var q = null;
     if(emp == 'designing'){
@@ -521,7 +521,7 @@ function getQuery(emp){
                 }
             ]
         };
-    } else if(emp == 'packing'){
+    } else if(emp === 'packing'){
         q = {
             $or : [
                 {
@@ -666,7 +666,7 @@ function getQuery(emp){
     }
 
     return q;
-}
+};
 
 var getEmpJt = function(request, response){
     mongoClient.connect(url, function(err, client){
@@ -678,7 +678,7 @@ var getEmpJt = function(request, response){
 
         console.log(emp);
         console.log(getQuery(emp));
-        var query = getQuery(emp);
+        var q = getQuery(emp);
 
         db.collection("JobTicket").aggregate([
             {
@@ -695,7 +695,7 @@ var getEmpJt = function(request, response){
             }
             ,
             {
-                $match : query
+                $match : q
             }
         ]).toArray(function (mongoError, resp) {
            if(mongoError) throw mongoError;
@@ -892,5 +892,6 @@ module.exports = {
     getAllJTProcesses : getAllJTProcesses,
     postJTProcesses : postJTProcesses,
     getEmpJt : getEmpJt,
-    updateProgress : updateProgress
+    updateProgress : updateProgress,
+    getQuery : getQuery
 };
