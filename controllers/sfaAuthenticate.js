@@ -40,9 +40,7 @@ var register = function(request,response){
                 db.collection('employee').insert(data, function(err,resp){
                     if(err) throw err;
 
-
                     response.send(true);
-
 
                 });
             }

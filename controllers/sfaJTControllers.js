@@ -14,7 +14,7 @@ var getAllJt = function(request, response){
 
             // var timeInMss = Date.now();
             // console.log(timeInMss);
-            console.log(jobTicket);
+            // console.log(jobTicket);
             response.send(jobTicket);
         });
 

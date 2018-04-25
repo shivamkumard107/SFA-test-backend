@@ -7,6 +7,7 @@
     var getQueryFn = require('./sfaProcesses.js');
 
 
+    // var errorHandler
 
     var getTaskByClientRegex = function(request, response){
         mongoClient.connect(url, function(err, client){
