@@ -1,4 +1,5 @@
     var mongoClient = require("mongodb").MongoClient;
+    var isodate = require("isodate");
     /* GET home page. */
 
 
@@ -29,8 +30,46 @@
 
         };
 
+
+        //Tested on LocalHost
+        // http://localhost:3000/date?startDate=1998-12-10&&endDate=1999-01-10
+        var getJtByDate = function (request, response) {
+
+            mongoClient.connect(url, function (err, client) {
+
+                var db = client.db(dbName);
+                var startDate = request.query.startDate;
+                var endDate = request.query.endDate;
+
+                // startDate = new Date(startDate.toISOString());
+
+                startDate = new Date(startDate);
+                endDate = new Date(endDate);
+
+                console.log(startDate);
+                console.log(endDate);
+
+                db.collection('JobTicket').find(
+                    {
+                        deliveryDate : {
+                            $gte : startDate,
+                            $lt : endDate
+                        }
+                    }
+                ).toArray(function (mongoError, ticket) {
+
+                    if(mongoError) throw mongoError;
+                    response.send(ticket);
+
+                });
+
+
+            });
+        };
+
     module.exports = {
-        getAllJt : getAllJt
+        getAllJt : getAllJt,
+        getJtByDate : getJtByDate
     };
 
 

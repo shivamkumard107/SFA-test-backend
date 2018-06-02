@@ -31,6 +31,8 @@ sfaRouter.route('/update').post(sfaProcessesController.updateProgress);
 
 //test
 sfaRouter.route('/test').get(test.getAllJt);
+sfaRouter.route('/date').get(test.getJtByDate);
+
 
 //Regex by Client name
 //task/client?emp=printing&reg=str

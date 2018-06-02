@@ -45,7 +45,7 @@ var postJt = function(request,response){
                 },
 
                 date : request.body.date ,
-                deliveryDate : request.body.deliveryDate ,
+                deliveryDate : new Date(request.body.deliveryDate.toISOString()),
                 notes : request.body.notes,
                 wt : request.body.wt,
                 priority : request.body.priority,
