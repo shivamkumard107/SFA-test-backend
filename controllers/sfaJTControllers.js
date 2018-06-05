@@ -68,8 +68,8 @@ var postJt = function(request,response){
                     name : request.body.Client.name
                 },
 
-                date : currDate ,
-                deliveryDate : delDate,
+                date : new Date(request.body.date) ,
+                deliveryDate : new Date(request.body.deliveryDate),
                 notes : request.body.notes,
                 wt : request.body.wt,
                 priority : request.body.priority,
