@@ -47,13 +47,18 @@ var postJt = function(request,response){
         // var momentDate = moment(delDate, 'YYYY-MM-DDTHH:mm:ss+-HH:mm:ss');
         // var jsDate = momentDate.toDate();
 
-        var currDate = request.body.date;
-        currDate = moment(currDate).format();
+        // var currDate = request.body.date;
+        // currDate = moment(currDate).format();
+        // currDate = currDate.toDate();
 
 
-        var delDate = request.body.deliveryDate;
-        delDate = moment(delDate).format();
+        // var delDate = request.body.deliveryDate;
+        // delDate = moment(delDate).format();
+        // moment(delDate, 'yyyy-MM-dd').toISOString();
+        // delDate = delDate.toDate();
 
+        var currDate = new Date(request.body.date);
+        var delDate = new Date(request.body.deliveryDate);
 
 
         var jt =
