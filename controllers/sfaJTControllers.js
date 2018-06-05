@@ -3,6 +3,9 @@ var mongoClient = mongoDb.MongoClient;
 var uniqid = require('uniqid');
 var url = require('./../routes/globalAccess.js').baseUrl;
 var dbName = require('./../routes/globalAccess.js').dbName;
+var isodate = require("isodate");
+
+var moment = require('moment');
 
 
 var getAllJt = function(request, response){
@@ -37,6 +40,22 @@ var postJt = function(request,response){
     mongoClient.connect(url,function(err,client){
         var db = client.db(dbName);
 
+        // var d = new Date();
+        // var isoString = d.toISOString();
+        // console.log(isoString);
+
+        // var momentDate = moment(delDate, 'YYYY-MM-DDTHH:mm:ss+-HH:mm:ss');
+        // var jsDate = momentDate.toDate();
+
+        var currDate = request.body.date;
+        currDate = moment(currDate).format();
+
+
+        var delDate = request.body.deliveryDate;
+        delDate = moment(delDate).format();
+
+
+
         var jt =
             {
                 Client : {
@@ -44,8 +63,8 @@ var postJt = function(request,response){
                     name : request.body.Client.name
                 },
 
-                date : request.body.date ,
-                deliveryDate : new Date(request.body.deliveryDate.toISOString()),
+                date : currDate ,
+                deliveryDate : delDate,
                 notes : request.body.notes,
                 wt : request.body.wt,
                 priority : request.body.priority,
