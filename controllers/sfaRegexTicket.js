@@ -128,9 +128,79 @@
     };
 
 
+    var getJtByDate = function (request, response) {
+
+        mongoClient.connect(url, function (err, client) {
+
+            var db = client.db(dbName);
+            var startDate = request.query.startDate;
+            var endDate = request.query.endDate;
+
+            // startDate = new Date(startDate.toISOString());
+
+            startDate = new Date(startDate);
+            endDate = new Date(endDate);
+
+            console.log(startDate);
+            console.log(endDate);
+
+            // db.collection('JobTicket').find(
+            //     {
+            //         deliveryDate : {
+            //             $gte : startDate,
+            //             $lt : endDate
+            //         }
+            //     }
+            // ).toArray(function (mongoError, ticket) {
+            //
+            //     if(mongoError) throw mongoError;
+            //     response.send(ticket);
+            //
+            // });
+
+
+            db.collection("JobTicket").aggregate([
+                {
+                    $unwind: "$wt"
+                },
+                {
+                    $lookup:
+                        {
+                            from: "JobTicketProcesses",
+                            localField: "wt",
+                            foreignField: "wt_id",
+                            as: "processes"
+                        }
+                }
+                ,
+                {
+                    $match :  {
+                        deliveryDate : {
+                            $gte : startDate,
+                            $lt : endDate
+                        }
+                    }
+                }
+
+            ]).toArray(function (mongoError, resp) {
+                if(mongoError) throw mongoError;
+
+
+                // console.log(resp);
+                response.send(resp);
+
+            });
+
+
+        });
+    };
+
+
+
     module.exports = {
         getTaskByClientRegex : getTaskByClientRegex,
-        getTaskByJobNameRegex : getTaskByJobNameRegex
+        getTaskByJobNameRegex : getTaskByJobNameRegex,
+        getJtByDate : getJtByDate
     };
 
     // .find(

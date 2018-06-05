@@ -31,7 +31,7 @@ sfaRouter.route('/update').post(sfaProcessesController.updateProgress);
 
 //test
 sfaRouter.route('/test').get(test.getAllJt);
-sfaRouter.route('/date').get(test.getJtByDate);
+// sfaRouter.route('/date').get(test.getJtByDate);
 
 
 //Regex by Client name
@@ -39,6 +39,9 @@ sfaRouter.route('/date').get(test.getJtByDate);
 sfaRouter.route('/task/client').get(sfaRegex.getTaskByClientRegex);
 //task/job?emp=printing&reg=str
 sfaRouter.route('/task/jobname').get(sfaRegex.getTaskByJobNameRegex);
+
+// http://localhost:3000/date?startDate=1999-11-10&&endDate=2002-11-10
+sfaRouter.route('/task/date').get(sfaRegex.getJtByDate);
 
 
 module.exports = sfaRouter;
