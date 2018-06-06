@@ -9,6 +9,7 @@
 
     // var errorHandler
 
+    //TODO: Pg
     var getTaskByClientRegex = function(request, response){
         mongoClient.connect(url, function(err, client){
 
@@ -68,6 +69,7 @@
         });
     };
 
+    //TODO: Pg
     var getTaskByJobNameRegex = function(request, response){
         mongoClient.connect(url, function(err, client){
 
@@ -128,6 +130,7 @@
     };
 
 
+    //TODO: Pg
     var getJtByDate = function (request, response) {
 
         mongoClient.connect(url, function (err, client) {

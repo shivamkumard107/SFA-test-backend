@@ -6,16 +6,16 @@ var util = require("util");
 var url = require('./../routes/globalAccess.js').baseUrl;
 var dbName = require('./../routes/globalAccess.js').dbName;
 
-var postJTProcesses = function(request, response){
+var postJTProcesses = function (request, response) {
 
     console.log(request.body);
-    mongoClient.connect(url, function(err, client){
+    mongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);
 
         var jobType = request.body.job_type;
 
 
-        if(jobType === 'book' || jobType === 'Book'){
+        if (jobType === 'book' || jobType === 'Book') {
 
             console.log('book');
             var jtProcesses =
@@ -25,388 +25,388 @@ var postJTProcesses = function(request, response){
                     job_type: request.body.job_type,
 
                     //Newly Added field - 11/3
-                    wt_id : request.body.wt_id,
-                    total_number : request.body.total_number,
-                    total_sets : request.body.total_sets,
-                    total_forms : request.body.total_forms,
-                    book : {
-                        designing :{
-                            isRequired : request.body.book.designing.isRequired,
-                            isDone : request.body.book.designing.isDone
+                    wt_id: request.body.wt_id,
+                    total_number: request.body.total_number,
+                    total_sets: request.body.total_sets,
+                    total_forms: request.body.total_forms,
+                    book: {
+                        designing: {
+                            isRequired: request.body.book.designing.isRequired,
+                            isDone: request.body.book.designing.isDone
                         },
 
-                        ferro:{
-                            isRequired : request.body.book.ferro.isRequired,
-                            isDone : request.body.book.ferro.isDone
+                        ferro: {
+                            isRequired: request.body.book.ferro.isRequired,
+                            isDone: request.body.book.ferro.isDone
                         },
-                        plates:{
-                            isRequired : request.body.book.plates.isRequired,
-                            isDone : request.body.book.plates.isDone
+                        plates: {
+                            isRequired: request.body.book.plates.isRequired,
+                            isDone: request.body.book.plates.isDone
                         },
-                        printing:{
-                            isRequired : request.body.book.printing.isRequired,
-                            updates :[
+                        printing: {
+                            isRequired: request.body.book.printing.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.book.printing.updates[0].done,
-                                    time : request.body.book.printing.updates[0].time,
-                                    sets_done : '0'
+                                    done: request.body.book.printing.updates[0].done,
+                                    time: request.body.book.printing.updates[0].time,
+                                    sets_done: '0'
                                 }
                             ]
                         },
-                        folding:{
-                            isRequired : request.body.book.folding.isRequired,
-                            updates :[
+                        folding: {
+                            isRequired: request.body.book.folding.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.book.folding.updates[0].done,
-                                    time : request.body.book.folding.updates[0].time,
-                                    sets_done : '0'
+                                    done: request.body.book.folding.updates[0].done,
+                                    time: request.body.book.folding.updates[0].time,
+                                    sets_done: '0'
                                 }
                             ]
                         },
-                        gathering:{
-                            isRequired : request.body.book.gathering.isRequired,
-                            updates :[
+                        gathering: {
+                            isRequired: request.body.book.gathering.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.book.gathering.updates[0].done,
-                                    time : request.body.book.gathering.updates[0].time,
+                                    done: request.body.book.gathering.updates[0].done,
+                                    time: request.body.book.gathering.updates[0].time,
                                 }
                             ]
                         },
-                        perfect:{
-                            isRequired : request.body.book.perfect.isRequired,
-                            updates :[
+                        perfect: {
+                            isRequired: request.body.book.perfect.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.book.perfect.updates[0].done,
-                                    time : request.body.book.perfect.updates[0].time,
+                                    done: request.body.book.perfect.updates[0].done,
+                                    time: request.body.book.perfect.updates[0].time,
                                 }
                             ]
                         },
-                        sewing:{
-                            isRequired : request.body.book.sewing.isRequired,
-                            updates :[
+                        sewing: {
+                            isRequired: request.body.book.sewing.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.book.sewing.updates[0].done,
-                                    time : request.body.book.sewing.updates[0].time,
+                                    done: request.body.book.sewing.updates[0].done,
+                                    time: request.body.book.sewing.updates[0].time,
                                 }
                             ]
                         },
-                        centre_pin:{
-                            isRequired : request.body.book.centre_pin.isRequired,
-                            updates :[
+                        centre_pin: {
+                            isRequired: request.body.book.centre_pin.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.book.centre_pin.updates[0].done,
-                                    time : request.body.book.centre_pin.updates[0].time,
+                                    done: request.body.book.centre_pin.updates[0].done,
+                                    time: request.body.book.centre_pin.updates[0].time,
                                 }
                             ]
                         },
-                        finishing:{
-                            isRequired : request.body.book.finishing.isRequired,
-                            updates :[
+                        finishing: {
+                            isRequired: request.body.book.finishing.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.book.finishing.updates[0].done,
-                                    time : request.body.book.finishing.updates[0].time,
+                                    done: request.body.book.finishing.updates[0].done,
+                                    time: request.body.book.finishing.updates[0].time,
                                 }
                             ]
                         },
-                        packing:{
-                            isRequired : request.body.book.packing.isRequired,
-                            updates :[
+                        packing: {
+                            isRequired: request.body.book.packing.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.book.packing.updates[0].done,
-                                    time : request.body.book.packing.updates[0].time,
+                                    done: request.body.book.packing.updates[0].done,
+                                    time: request.body.book.packing.updates[0].time,
                                 }
                             ]
                         },
-                        dispatch:{
-                            isRequired : request.body.book.dispatch.isRequired,
-                            updates :[
+                        dispatch: {
+                            isRequired: request.body.book.dispatch.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.book.dispatch.updates[0].done,
-                                    time : request.body.book.dispatch.updates[0].time,
+                                    done: request.body.book.dispatch.updates[0].done,
+                                    time: request.body.book.dispatch.updates[0].time,
                                 }
                             ]
                         },
-                        challan:{
-                            isRequired : request.body.book.challan.isRequired,
-                            updates :[
+                        challan: {
+                            isRequired: request.body.book.challan.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.book.challan.updates[0].done,
-                                    time : request.body.book.challan.updates[0].time,
+                                    done: request.body.book.challan.updates[0].done,
+                                    time: request.body.book.challan.updates[0].time,
                                 }
                             ]
                         },
-                        bill:{
-                            isRequired : request.body.book.bill.isRequired,
-                            updates :[
+                        bill: {
+                            isRequired: request.body.book.bill.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.book.bill.updates[0].done,
-                                    time : request.body.book.bill.updates[0].time,
+                                    done: request.body.book.bill.updates[0].done,
+                                    time: request.body.book.bill.updates[0].time,
                                 }
                             ]
                         }
                     },
-                    cover : null,
-                    box : null
+                    cover: null,
+                    box: null
                 };
 
-        } else if(jobType === 'cover' || jobType === 'Cover'){
+        } else if (jobType === 'cover' || jobType === 'Cover') {
 
             var jtProcesses =
 
                 {
 
                     job_type: request.body.job_type,
-                    wt_id : request.body.wt_id,
-                    total_number : request.body.total_number,
-                    total_sets : request.body.total_sets,
-                    total_forms : request.body.total_forms,
-                    book : null,
+                    wt_id: request.body.wt_id,
+                    total_number: request.body.total_number,
+                    total_sets: request.body.total_sets,
+                    total_forms: request.body.total_forms,
+                    book: null,
                     cover: {
-                        designing :{
-                            isRequired : request.body.cover.designing.isRequired,
-                            isDone : request.body.cover.designing.isDone
+                        designing: {
+                            isRequired: request.body.cover.designing.isRequired,
+                            isDone: request.body.cover.designing.isDone
                         },
 
-                        ferro:{
-                            isRequired : request.body.cover.ferro.isRequired,
-                            isDone : request.body.cover.ferro.isDone
+                        ferro: {
+                            isRequired: request.body.cover.ferro.isRequired,
+                            isDone: request.body.cover.ferro.isDone
                         },
-                        plates:{
-                            isRequired : request.body.cover.plates.isRequired,
-                            isDone : request.body.cover.plates.isDone
+                        plates: {
+                            isRequired: request.body.cover.plates.isRequired,
+                            isDone: request.body.cover.plates.isDone
                         },
-                        printing:{
-                            isRequired : request.body.cover.printing.isRequired,
-                            updates :[
+                        printing: {
+                            isRequired: request.body.cover.printing.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.cover.printing.updates[0].done,
-                                    time : request.body.cover.printing.updates[0].time,
-                                    sets_done : '0'
+                                    done: request.body.cover.printing.updates[0].done,
+                                    time: request.body.cover.printing.updates[0].time,
+                                    sets_done: '0'
                                 }
                             ]
                         },
-                        lamination:{
-                            isRequired : request.body.cover.lamination.isRequired,
-                            updates :[
+                        lamination: {
+                            isRequired: request.body.cover.lamination.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.cover.lamination.updates[0].done,
-                                    time : request.body.cover.lamination.updates[0].time,
+                                    done: request.body.cover.lamination.updates[0].done,
+                                    time: request.body.cover.lamination.updates[0].time,
                                 }
                             ]
                         },
-                        creasing:{
-                            isRequired : request.body.cover.creasing.isRequired,
-                            updates :[
+                        creasing: {
+                            isRequired: request.body.cover.creasing.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.cover.creasing.updates[0].done,
-                                    time : request.body.cover.creasing.updates[0].time,
+                                    done: request.body.cover.creasing.updates[0].done,
+                                    time: request.body.cover.creasing.updates[0].time,
                                 }
                             ]
                         },
-                        binding:{
-                            isRequired : request.body.cover.binding.isRequired,
-                            updates :[
+                        binding: {
+                            isRequired: request.body.cover.binding.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.cover.binding.updates[0].done,
-                                    time : request.body.cover.binding.updates[0].time,
+                                    done: request.body.cover.binding.updates[0].done,
+                                    time: request.body.cover.binding.updates[0].time,
                                 }
                             ]
                         },
-                        packing:{
-                            isRequired : request.body.cover.packing.isRequired,
-                            updates :[
+                        packing: {
+                            isRequired: request.body.cover.packing.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.cover.packing.updates[0].done,
-                                    time : request.body.cover.packing.updates[0].time,
+                                    done: request.body.cover.packing.updates[0].done,
+                                    time: request.body.cover.packing.updates[0].time,
                                 }
                             ]
                         },
-                        dispatch:{
-                            isRequired : request.body.cover.dispatch.isRequired,
-                            updates :[
+                        dispatch: {
+                            isRequired: request.body.cover.dispatch.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.cover.dispatch.updates[0].done,
-                                    time : request.body.cover.dispatch.updates[0].time,
+                                    done: request.body.cover.dispatch.updates[0].done,
+                                    time: request.body.cover.dispatch.updates[0].time,
                                 }
                             ]
                         },
-                        challan:{
-                            isRequired : request.body.cover.challan.isRequired,
-                            updates :[
+                        challan: {
+                            isRequired: request.body.cover.challan.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.cover.challan.updates[0].done,
-                                    time : request.body.cover.challan.updates[0].time,
+                                    done: request.body.cover.challan.updates[0].done,
+                                    time: request.body.cover.challan.updates[0].time,
                                 }
                             ]
                         },
-                        bill:{
-                            isRequired : request.body.cover.bill.isRequired,
-                            updates :[
+                        bill: {
+                            isRequired: request.body.cover.bill.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.cover.bill.updates[0].done,
-                                    time : request.body.cover.bill.updates[0].time,
+                                    done: request.body.cover.bill.updates[0].done,
+                                    time: request.body.cover.bill.updates[0].time,
                                 }
                             ]
                         }
                     },
 
-                    box:null
+                    box: null
                 };
 
-        } else if(jobType == 'box' || jobType == 'Box'){
+        } else if (jobType == 'box' || jobType == 'Box') {
 
             var jtProcesses =
 
                 {
 
                     job_type: request.body.job_type,
-                    wt_id : request.body.wt_id,
-                    total_number : request.body.total_number,
-                    total_sets : request.body.total_sets,
-                    total_forms : request.body.total_forms,
-                    book : null,
-                    cover : null,
-                    box : {
-                        designing :{
-                            isRequired : request.body.box.designing.isRequired,
-                            isDone : request.body.box.designing.isDone
+                    wt_id: request.body.wt_id,
+                    total_number: request.body.total_number,
+                    total_sets: request.body.total_sets,
+                    total_forms: request.body.total_forms,
+                    book: null,
+                    cover: null,
+                    box: {
+                        designing: {
+                            isRequired: request.body.box.designing.isRequired,
+                            isDone: request.body.box.designing.isDone
                         },
 
-                        ferro:{
-                            isRequired : request.body.box.ferro.isRequired,
-                            isDone : request.body.box.ferro.isDone
+                        ferro: {
+                            isRequired: request.body.box.ferro.isRequired,
+                            isDone: request.body.box.ferro.isDone
                         },
-                        plates:{
-                            isRequired : request.body.box.plates.isRequired,
-                            isDone : request.body.box.plates.isDone
+                        plates: {
+                            isRequired: request.body.box.plates.isRequired,
+                            isDone: request.body.box.plates.isDone
                         },
-                        printing:{
-                            isRequired : request.body.box.printing.isRequired,
-                            updates :[
+                        printing: {
+                            isRequired: request.body.box.printing.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.box.printing.updates[0].done,
-                                    time : request.body.box.printing.updates[0].time,
-                                    sets_done : '0'
+                                    done: request.body.box.printing.updates[0].done,
+                                    time: request.body.box.printing.updates[0].time,
+                                    sets_done: '0'
                                 }
                             ]
                         },
-                        lamination:{
-                            isRequired : request.body.box.lamination.isRequired,
-                            updates :[
+                        lamination: {
+                            isRequired: request.body.box.lamination.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.box.lamination.updates[0].done,
-                                    time : request.body.box.lamination.updates[0].time,
+                                    done: request.body.box.lamination.updates[0].done,
+                                    time: request.body.box.lamination.updates[0].time,
                                 }
                             ]
                         },
-                        uv:{
-                            isRequired : request.body.box.uv.isRequired,
-                            updates :[
+                        uv: {
+                            isRequired: request.body.box.uv.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.box.uv.updates[0].done,
-                                    time : request.body.box.uv.updates[0].time,
+                                    done: request.body.box.uv.updates[0].done,
+                                    time: request.body.box.uv.updates[0].time,
                                 }
                             ]
                         },
-                        embossing:{
-                            isRequired : request.body.box.embossing.isRequired,
-                            updates :[
+                        embossing: {
+                            isRequired: request.body.box.embossing.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.box.embossing.updates[0].done,
-                                    time : request.body.box.embossing.updates[0].time,
+                                    done: request.body.box.embossing.updates[0].done,
+                                    time: request.body.box.embossing.updates[0].time,
                                 }
                             ]
                         },
-                        foiling:{
-                            isRequired : request.body.box.foiling.isRequired,
-                            updates :[
+                        foiling: {
+                            isRequired: request.body.box.foiling.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.box.foiling.updates[0].done,
-                                    time : request.body.box.foiling.updates[0].time,
+                                    done: request.body.box.foiling.updates[0].done,
+                                    time: request.body.box.foiling.updates[0].time,
                                 }
                             ]
                         },
-                        die_cut:{
-                            isRequired : request.body.box.die_cut.isRequired,
-                            updates :[
+                        die_cut: {
+                            isRequired: request.body.box.die_cut.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.box.die_cut.updates[0].done,
-                                    time : request.body.box.die_cut.updates[0].time,
+                                    done: request.body.box.die_cut.updates[0].done,
+                                    time: request.body.box.die_cut.updates[0].time,
                                 }
                             ]
                         },
-                        pasting:{
-                            isRequired : request.body.box.pasting.isRequired,
-                            updates :[
+                        pasting: {
+                            isRequired: request.body.box.pasting.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.box.pasting.updates[0].done,
-                                    time : request.body.box.pasting.updates[0].time,
+                                    done: request.body.box.pasting.updates[0].done,
+                                    time: request.body.box.pasting.updates[0].time,
                                 }
                             ]
                         },
-                        packing:{
-                            isRequired : request.body.box.packing.isRequired,
-                            updates :[
+                        packing: {
+                            isRequired: request.body.box.packing.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.box.packing.updates[0].done,
-                                    time : request.body.box.packing.updates[0].time,
+                                    done: request.body.box.packing.updates[0].done,
+                                    time: request.body.box.packing.updates[0].time,
                                 }
                             ]
                         },
-                        dispatch:{
-                            isRequired : request.body.box.dispatch.isRequired,
-                            updates :[
+                        dispatch: {
+                            isRequired: request.body.box.dispatch.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.box.dispatch.updates[0].done,
-                                    time : request.body.box.dispatch.updates[0].time,
+                                    done: request.body.box.dispatch.updates[0].done,
+                                    time: request.body.box.dispatch.updates[0].time,
                                 }
                             ]
                         },
-                        challan:{
-                            isRequired : request.body.box.challan.isRequired,
-                            updates :[
+                        challan: {
+                            isRequired: request.body.box.challan.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.box.challan.updates[0].done,
-                                    time : request.body.box.challan.updates[0].time,
+                                    done: request.body.box.challan.updates[0].done,
+                                    time: request.body.box.challan.updates[0].time,
                                 }
                             ]
                         },
-                        bill:{
-                            isRequired : request.body.box.bill.isRequired,
-                            updates :[
+                        bill: {
+                            isRequired: request.body.box.bill.isRequired,
+                            updates: [
                                 {
 
-                                    done : request.body.box.bill.updates[0].done,
-                                    time : request.body.box.bill.updates[0].time,
+                                    done: request.body.box.bill.updates[0].done,
+                                    time: request.body.box.bill.updates[0].time,
                                 }
                             ]
                         }
@@ -416,21 +416,20 @@ var postJTProcesses = function(request, response){
         }
 
 
+        db.collection('JobTicketProcesses').insert(jtProcesses, function (err, resp) {
 
-        db.collection('JobTicketProcesses').insert(jtProcesses, function(err, resp){
-
-            if(err){
+            if (err) {
                 var json_response_false = {
-                    'success' : false,
-                    'wt_id' : request.body.wt_id
+                    'success': false,
+                    'wt_id': request.body.wt_id
                 };
 
                 response.send(json_response_false)
             }
 
             var json_response_true = {
-                'success' : true,
-                'wt_id' : request.body.wt_id
+                'success': true,
+                'wt_id': request.body.wt_id
             };
 
             response.send(json_response_true)
@@ -451,225 +450,227 @@ var postJTProcesses = function(request, response){
     });
 };
 
-
-var getAllJTProcesses = function(request, response){
-    mongoClient.connect(url, function(err, client){
+//TODO: Pg
+var getAllJTProcesses = function (request, response) {
+    mongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);
-        db.collection('JobTicketProcesses').find().toArray(function(err, resp){
-            if(err) throw err;
+        db.collection('JobTicketProcesses').find().toArray(function (err, resp) {
+            if (err) throw err;
             response.send(resp);
         });
     });
 };
 
-var getQuery = function getQuery(emp){
+var getQuery = function getQuery(emp) {
 
     var q = null;
-    if(emp == 'designing'){
+    if (emp == 'designing') {
         q = {
-            $or : [
+            $or: [
                 {
-                    "processes.book.designing.isRequired" : true
+                    "processes.book.designing.isRequired": true
                 },
                 {
-                    "processes.box.designing.isRequired" : true
+                    "processes.box.designing.isRequired": true
                 },
                 {
-                    "processes.cover.designing.isRequired" : true
+                    "processes.cover.designing.isRequired": true
                 }
             ]
         };
-    } else if(emp == 'ferro'){
+    } else if (emp == 'ferro') {
         q = {
-            $or : [
+            $or: [
                 {
-                    "processes.book.ferro.isRequired" : true
+                    "processes.book.ferro.isRequired": true
                 },
                 {
-                    "processes.box.ferro.isRequired" : true
+                    "processes.box.ferro.isRequired": true
                 },
                 {
-                    "processes.cover.ferro.isRequired" : true
+                    "processes.cover.ferro.isRequired": true
                 }
             ]
         };
-    } else if(emp == 'plates'){
+    } else if (emp == 'plates') {
         q = {
-            $or : [
+            $or: [
                 {
-                    "processes.book.plates.isRequired" : true
+                    "processes.book.plates.isRequired": true
                 },
                 {
-                    "processes.box.plates.isRequired" : true
+                    "processes.box.plates.isRequired": true
                 },
                 {
-                    "processes.cover.plates.isRequired" : true
+                    "processes.cover.plates.isRequired": true
                 }
             ]
         };
-    } else if(emp == 'printing'){
+    } else if (emp == 'printing') {
         q = {
-            $or : [
+            $or: [
                 {
-                    "processes.book.printing.isRequired" : true
+                    "processes.book.printing.isRequired": true
                 },
                 {
-                    "processes.box.printing.isRequired" : true
+                    "processes.box.printing.isRequired": true
                 },
                 {
-                    "processes.cover.printing.isRequired" : true
+                    "processes.cover.printing.isRequired": true
                 }
             ]
         };
-    } else if(emp === 'packing'){
+    } else if (emp === 'packing') {
         q = {
-            $or : [
+            $or: [
                 {
-                    "processes.book.packing.isRequired" : true
+                    "processes.book.packing.isRequired": true
                 },
                 {
-                    "processes.box.packing.isRequired" : true
+                    "processes.box.packing.isRequired": true
                 },
                 {
-                    "processes.cover.packing.isRequired" : true
-                }
-            ]
-        };
-
-    } else if(emp == 'dispatch'){
-        q = {
-            $or : [
-                {
-                    "processes.book.dispatch.isRequired" : true
-                },
-                {
-                    "processes.box.dispatch.isRequired" : true
-                },
-                {
-                    "processes.cover.dispatch.isRequired" : true
+                    "processes.cover.packing.isRequired": true
                 }
             ]
         };
 
-    } else if(emp == 'challan'){
+    } else if (emp == 'dispatch') {
         q = {
-            $or : [
+            $or: [
                 {
-                    "processes.book.challan.isRequired" : true
+                    "processes.book.dispatch.isRequired": true
                 },
                 {
-                    "processes.box.challan.isRequired" : true
+                    "processes.box.dispatch.isRequired": true
                 },
                 {
-                    "processes.cover.challan.isRequired" : true
+                    "processes.cover.dispatch.isRequired": true
                 }
             ]
         };
 
-    } else if(emp == 'bill'){
+    } else if (emp == 'challan') {
         q = {
-            $or : [
+            $or: [
                 {
-                    "processes.book.bill.isRequired" : true
+                    "processes.book.challan.isRequired": true
                 },
                 {
-                    "processes.box.bill.isRequired" : true
+                    "processes.box.challan.isRequired": true
                 },
                 {
-                    "processes.cover.bill.isRequired" : true
+                    "processes.cover.challan.isRequired": true
                 }
             ]
         };
 
-    } else if(emp == 'folding'){
-
+    } else if (emp == 'bill') {
         q = {
-            "processes.book.folding.isRequired" : true
-        };
-
-    } else if(emp == 'gathering'){
-        q = {
-            "processes.book.folding.isRequired" : true
-        };
-
-    } else if(emp == 'perfect'){
-        q = {
-            "processes.book.perfect.isRequired" : true
-        };
-
-    } else if(emp == 'sewing'){
-        q = {
-            "processes.book.sewing.isRequired" : true
-        };
-
-    } else if(emp == 'centre_pin'){
-        q = {
-            "processes.book.centre_pin.isRequired" : true
-        };
-
-    } else if(emp == 'finishing'){
-        q = {
-            "processes.book.finishing.isRequired" : true
-        };
-
-    } else if(emp == 'lamination'){
-        q = {
-            $or : [
+            $or: [
                 {
-                    "processes.cover.lamination.isRequired" : true
+                    "processes.book.bill.isRequired": true
                 },
                 {
-                    "processes.box.lamination.isRequired" : true
+                    "processes.box.bill.isRequired": true
+                },
+                {
+                    "processes.cover.bill.isRequired": true
                 }
             ]
         };
 
-    } else if(emp == 'uv'){
+    } else if (emp == 'folding') {
+
         q = {
-            "processes.box.uv.isRequired" : true
+            "processes.book.folding.isRequired": true
         };
 
-    } else if(emp == 'embossing'){
+    } else if (emp == 'gathering') {
         q = {
-            "processes.box.embossing.isRequired" : true
+            "processes.book.folding.isRequired": true
         };
 
-    } else if(emp == 'foiling'){
+    } else if (emp == 'perfect') {
         q = {
-            "processes.box.foiling.isRequired" : true
+            "processes.book.perfect.isRequired": true
         };
 
-    } else if(emp == 'die_cut'){
+    } else if (emp == 'sewing') {
         q = {
-            "processes.box.die_cut.isRequired" : true
+            "processes.book.sewing.isRequired": true
         };
 
-    } else if(emp == 'pasting'){
+    } else if (emp == 'centre_pin') {
         q = {
-            "processes.box.pasting.isRequired" : true
+            "processes.book.centre_pin.isRequired": true
         };
 
-    } else if(emp == 'creasing'){
+    } else if (emp == 'finishing') {
         q = {
-            "processes.cover.creasing.isRequired" : true
+            "processes.book.finishing.isRequired": true
         };
 
-    } else if(emp === 'binding'){
+    } else if (emp == 'lamination') {
         q = {
-            "processes.cover.binding.isRequired" : true
+            $or: [
+                {
+                    "processes.cover.lamination.isRequired": true
+                },
+                {
+                    "processes.box.lamination.isRequired": true
+                }
+            ]
+        };
+
+    } else if (emp == 'uv') {
+        q = {
+            "processes.box.uv.isRequired": true
+        };
+
+    } else if (emp == 'embossing') {
+        q = {
+            "processes.box.embossing.isRequired": true
+        };
+
+    } else if (emp == 'foiling') {
+        q = {
+            "processes.box.foiling.isRequired": true
+        };
+
+    } else if (emp == 'die_cut') {
+        q = {
+            "processes.box.die_cut.isRequired": true
+        };
+
+    } else if (emp == 'pasting') {
+        q = {
+            "processes.box.pasting.isRequired": true
+        };
+
+    } else if (emp == 'creasing') {
+        q = {
+            "processes.cover.creasing.isRequired": true
+        };
+
+    } else if (emp === 'binding') {
+        q = {
+            "processes.cover.binding.isRequired": true
         };
 
     } else {
-        q = {
-
-        };
+        q = {};
     }
 
     return q;
 };
 
-var getEmpJt = function(request, response){
-    mongoClient.connect(url, function(err, client){
+//TODO: Pg
+//http://localhost:3000/task?page=2&perPage=2&emp=printing
+
+//Gives tickets with isDel false sorted on delivery date
+var getEmpJt = function (request, response) {
+    mongoClient.connect(url, function (err, client) {
 
         var db = client.db(dbName);
 
@@ -680,54 +681,82 @@ var getEmpJt = function(request, response){
         console.log(getQuery(emp));
         var q = getQuery(emp);
 
-        db.collection("JobTicket").aggregate([
-            {
-                $unwind: "$wt"
-            },
-            {
-                $lookup:
-                    {
-                        from: "JobTicketProcesses",
-                        localField: "wt",
-                        foreignField: "wt_id",
-                        as: "processes"
+        //Page number handling
+        var pg = 1;
+
+        if (request.query.page) {
+            pg = request.query.page;
+        }
+
+        var recPerPage = 5;
+        if (request.query.perPage) {
+            recPerPage = parseInt(request.query.perPage);
+        }
+
+
+        db.collection("JobTicket")
+            .aggregate([
+                {
+                    $unwind: "$wt"
+                },
+                {
+                    $lookup:
+                        {
+                            from: "JobTicketProcesses",
+                            localField: "wt",
+                            foreignField: "wt_id",
+                            as: "processes"
+                        }
+                }
+                ,
+                {
+                    $match: {
+                        $and: [
+                            q,
+                            {
+                                isDelivered: false
+                            }
+                        ]
                     }
-            }
-            ,
-            {
-                $match : q
-            }
-        ]).toArray(function (mongoError, resp) {
-           if(mongoError) throw mongoError;
+                }
+            ])
+            .sort(
+                {
+                    deliveryDate: 1
+                }
+            )
+            .skip(pg > 0 ? ( ( pg - 1 ) * recPerPage ) : 0)
+            .limit(recPerPage)
+            .toArray(function (mongoError, resp) {
+                if (mongoError) throw mongoError;
 
-           console.log(resp);
-           response.send(resp);
+                console.log(resp);
+                response.send(resp);
 
-        });
+            });
 
 
     });
 };
 
 
-
 //http://localhost:3000/update?emp=designing&wt=wtID
-var updateProgress = function(request, response){
-    mongoClient.connect(url, function(err, client){
+var updateProgress = function (request, response) {
+    mongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);
 
 
-        db.collection('JobTicketProcesses').findOne({ wt_id : request.query.wt }, function(err, ticketProcesses){
-            if(err) throw err;
+        db.collection('JobTicketProcesses').findOne({wt_id: request.query.wt}, function (err, ticketProcesses) {
+            if (err) throw err;
 
             //Push new object in array
             var emp = request.query.emp;
             var jobType = ticketProcesses.job_type;
 
             var job = null;
-            if(jobType == 'Book' || jobType == 'book'){
+            if (jobType == 'Book' || jobType == 'book') {
                 job = ticketProcesses.book;
-            } else if(jobType == 'Box' || jobType == 'box'){
+            } else if (jobType == 'Box' || jobType == 'box') {
                 job = ticketProcesses.box;
             } else {
                 //Cover or cover
@@ -737,27 +766,26 @@ var updateProgress = function(request, response){
 
             var empDepartmentObject = job[emp];
 
-            if(emp == 'designing' || emp == 'ferro' || emp == 'plates'){
+            if (emp == 'designing' || emp == 'ferro' || emp == 'plates') {
                 //Change isDone
                 empDepartmentObject.isDone = true;
-                db.collection('JobTicketProcesses').
-                update({ wt_id : request.query.wt },{$set : ticketProcesses},function(err,resp){
-                    if(err) throw err;
+                db.collection('JobTicketProcesses').update({wt_id: request.query.wt}, {$set: ticketProcesses}, function (err, resp) {
+                    if (err) throw err;
                     var json_response_true = {
-                        'success' : true,
-                        'message' : request.query.emp + ' progress update success'
+                        'success': true,
+                        'message': request.query.emp + ' progress update success'
                     };
 
                     response.send(json_response_true);
                 });
 
 
-            } else if(emp == 'printing' || emp == 'folding'){
+            } else if (emp == 'printing' || emp == 'folding') {
 
                 var arrObj = {
-                    time : request.body.time,
-                    done : request.body.done,
-                    sets_done : request.body.sets_done
+                    time: request.body.time,
+                    done: request.body.done,
+                    sets_done: request.body.sets_done
                 };
 
 
@@ -765,13 +793,13 @@ var updateProgress = function(request, response){
                 var arr = empDepartmentObject.updates;
                 var arrLength = arr.length;
 
-                var oldVal = parseInt(arr[arrLength-1].done);
+                var oldVal = parseInt(arr[arrLength - 1].done);
                 var newVal = oldVal + parseInt(arrObj.done);
 
-                if(newVal > parseInt(ticketProcesses.total_number)){
+                if (newVal > parseInt(ticketProcesses.total_number)) {
                     var json_response_false = {
-                        'success' : false,
-                        'message' : 'invalid value entered'
+                        'success': false,
+                        'message': 'invalid value entered'
                     };
 
                     response.send(json_response_false);
@@ -784,15 +812,15 @@ var updateProgress = function(request, response){
 
 
                 //Setting new sets or forms
-                var oldValSets = parseInt(arr[arrLength-1].sets_done);
+                var oldValSets = parseInt(arr[arrLength - 1].sets_done);
                 var newValSets = oldValSets + parseInt(arrObj.sets_done);
 
-                if(emp == 'printing'){
+                if (emp == 'printing') {
 
-                    if(newValSets > parseInt(ticketProcesses.total_sets)){
+                    if (newValSets > parseInt(ticketProcesses.total_sets)) {
                         var json_response_false = {
-                            'success' : false,
-                            'message' : 'invalid value entered'
+                            'success': false,
+                            'message': 'invalid value entered'
                         };
 
                         response.send(json_response_false);
@@ -802,10 +830,10 @@ var updateProgress = function(request, response){
 
                 } else {
                     //Folding
-                    if(newValSets > parseInt(ticketProcesses.total_forms)){
+                    if (newValSets > parseInt(ticketProcesses.total_forms)) {
                         var json_response_false = {
-                            'success' : false,
-                            'message' : 'invalid value entered'
+                            'success': false,
+                            'message': 'invalid value entered'
                         };
 
                         response.send(json_response_false);
@@ -820,26 +848,22 @@ var updateProgress = function(request, response){
                 arr.push(arrObj);
 
 
-
-                db.collection('JobTicketProcesses').
-                update({ wt_id : request.query.wt },{$set : ticketProcesses},function(err,resp){
-                    if(err) throw err;
+                db.collection('JobTicketProcesses').update({wt_id: request.query.wt}, {$set: ticketProcesses}, function (err, resp) {
+                    if (err) throw err;
                     var json_response_true = {
-                        'success' : true,
-                        'message' : request.query.emp + ' progress update success'
+                        'success': true,
+                        'message': request.query.emp + ' progress update success'
                     };
                     response.send(json_response_true);
                 });
 
 
-
-
-            } else{
+            } else {
 
 
                 var arrObj = {
-                    time : request.body.time,
-                    done : request.body.done
+                    time: request.body.time,
+                    done: request.body.done
                 };
 
 
@@ -847,14 +871,14 @@ var updateProgress = function(request, response){
                 var arr = empDepartmentObject.updates;
                 var arrLength = arr.length;
 
-                var oldVal = parseInt(arr[arrLength-1].done);
+                var oldVal = parseInt(arr[arrLength - 1].done);
                 var newVal = oldVal + parseInt(arrObj.done);
 
-                if(newVal > parseInt(ticketProcesses.total_number)){
+                if (newVal > parseInt(ticketProcesses.total_number)) {
 
                     var json_response_false = {
-                        'success' : false,
-                        'message' : 'invalid value entered'
+                        'success': false,
+                        'message': 'invalid value entered'
                     };
 
                     response.send(json_response_false);
@@ -866,13 +890,12 @@ var updateProgress = function(request, response){
                 arr.push(arrObj);
 
 
-                db.collection('JobTicketProcesses').
-                update({ wt_id : request.query.wt },{$set : ticketProcesses},function(err,resp){
-                    if(err) throw err;
+                db.collection('JobTicketProcesses').update({wt_id: request.query.wt}, {$set: ticketProcesses}, function (err, resp) {
+                    if (err) throw err;
 
                     var json_response_true = {
-                        'success' : true,
-                        'message' : request.query.emp + ' progress update success'
+                        'success': true,
+                        'message': request.query.emp + ' progress update success'
                     };
 
                     response.send(json_response_true);
@@ -889,9 +912,9 @@ var updateProgress = function(request, response){
 
 
 module.exports = {
-    getAllJTProcesses : getAllJTProcesses,
-    postJTProcesses : postJTProcesses,
-    getEmpJt : getEmpJt,
-    updateProgress : updateProgress,
-    getQuery : getQuery
+    getAllJTProcesses: getAllJTProcesses,
+    postJTProcesses: postJTProcesses,
+    getEmpJt: getEmpJt,
+    updateProgress: updateProgress,
+    getQuery: getQuery
 };

@@ -7,13 +7,13 @@ var isodate = require("isodate");
 
 var moment = require('moment');
 
-
-var getAllJt = function(request, response){
-    mongoClient.connect(url, function(err, client){
+//TODO : Page number
+var getAllJt = function (request, response) {
+    mongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);
 
-        db.collection('JobTicket').find().toArray(function(err, jobTicket){
-            if(err) throw err;
+        db.collection('JobTicket').find().toArray(function (err, jobTicket) {
+            if (err) throw err;
 
             // var timeInMss = Date.now();
             // console.log(timeInMss);
@@ -35,9 +35,8 @@ var getAllJt = function(request, response){
 // }
 
 
-
-var postJt = function(request,response){
-    mongoClient.connect(url,function(err,client){
+var postJt = function (request, response) {
+    mongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);
 
         // var d = new Date();
@@ -63,52 +62,52 @@ var postJt = function(request,response){
 
         var jt =
             {
-                Client : {
-                    contact : request.body.Client.contact ,
-                    name : request.body.Client.name
+                Client: {
+                    contact: request.body.Client.contact,
+                    name: request.body.Client.name
                 },
 
-                date : new Date(request.body.date) ,
-                deliveryDate : new Date(request.body.deliveryDate),
-                notes : request.body.notes,
-                wt : request.body.wt,
-                priority : request.body.priority,
-                image : request.body.image,
-                isDelivered : request.body.isDelivered,
+                date: new Date(request.body.date),
+                deliveryDate: new Date(request.body.deliveryDate),
+                notes: request.body.notes,
+                wt: request.body.wt,
+                priority: request.body.priority,
+                image: request.body.image,
+                isDelivered: request.body.isDelivered,
 
-                Job : {
-                    name : request.body.Job.name ,
-                    noOfCol : request.body.Job.noOfCol ,
-                    printRun : request.body.Job.printRun ,
-                    size : request.body.Job.size,
-                    type : request.body.Job.type,
-                    wastage : request.body.Job.wastage
+                Job: {
+                    name: request.body.Job.name,
+                    noOfCol: request.body.Job.noOfCol,
+                    printRun: request.body.Job.printRun,
+                    size: request.body.Job.size,
+                    type: request.body.Job.type,
+                    wastage: request.body.Job.wastage
                 },
 
-                Machine : {
-                    machine : request.body.Machine.machine ,
-                    name : request.body.Machine.name
+                Machine: {
+                    machine: request.body.Machine.machine,
+                    name: request.body.Machine.name
                 },
 
 
-                Paper : {
-                    details : request.body.Paper.details,
-                    location : request.body.Paper.location,
-                    paperBy : request.body.Paper.paperBy,
-                    quality : request.body.Paper.quality,
-                    quantity : request.body.Paper.quantity
+                Paper: {
+                    details: request.body.Paper.details,
+                    location: request.body.Paper.location,
+                    paperBy: request.body.Paper.paperBy,
+                    quality: request.body.Paper.quality,
+                    quantity: request.body.Paper.quantity
                 },
 
-                Plate : {
-                    name : request.body.Plate.name,
-                    plate : request.body.Plate.plate,
-                    quantity : request.body.Plate.quantity
+                Plate: {
+                    name: request.body.Plate.name,
+                    plate: request.body.Plate.plate,
+                    quantity: request.body.Plate.quantity
                 }
             };
 
 
-        db.collection('JobTicket').insert(jt,function(err,resp){
-            if(err) throw err;
+        db.collection('JobTicket').insert(jt, function (err, resp) {
+            if (err) throw err;
 
             var idArr = resp['ops'];
             var wt_id = idArr[0].wt;
@@ -116,8 +115,8 @@ var postJt = function(request,response){
 
             //Send success status and inserted wt id
             var json_response = {
-                'success' : true,
-                'wt_id' : wt_id
+                'success': true,
+                'wt_id': wt_id
             };
 
             response.send(json_response);
@@ -129,17 +128,17 @@ var postJt = function(request,response){
     });
 };
 
-var getParticularJt = function(request, response){
-    mongoClient.connect(url, function(err, client){
+var getParticularJt = function (request, response) {
+    mongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);
 
 
         var query = {
-            wt : request.query.wt
+            wt: request.query.wt
         };
 
         db.collection('JobTicket').findOne(query, function (err, ticket) {
-            if(err) throw err;
+            if (err) throw err;
             response.send(ticket);
         });
 
@@ -149,10 +148,8 @@ var getParticularJt = function(request, response){
 };
 
 
-
-
 module.exports = {
-    getAllJt : getAllJt,
-    postJt : postJt,
-    getParticularJt : getParticularJt
+    getAllJt: getAllJt,
+    postJt: postJt,
+    getParticularJt: getParticularJt
 };
