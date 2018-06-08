@@ -49,7 +49,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.book.printing.updates[0].done,
-                                    time: request.body.book.printing.updates[0].time,
+                                    time: new Date(request.body.book.printing.updates[0].time),
                                     sets_done: '0'
                                 }
                             ]
@@ -60,7 +60,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.book.folding.updates[0].done,
-                                    time: request.body.book.folding.updates[0].time,
+                                    time: new Date(request.body.book.folding.updates[0].time),
                                     sets_done: '0'
                                 }
                             ]
@@ -71,7 +71,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.book.gathering.updates[0].done,
-                                    time: request.body.book.gathering.updates[0].time,
+                                    time: new Date(request.body.book.gathering.updates[0].time),
                                 }
                             ]
                         },
@@ -81,7 +81,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.book.perfect.updates[0].done,
-                                    time: request.body.book.perfect.updates[0].time,
+                                    time: new Date(request.body.book.perfect.updates[0].time),
                                 }
                             ]
                         },
@@ -91,7 +91,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.book.sewing.updates[0].done,
-                                    time: request.body.book.sewing.updates[0].time,
+                                    time: new Date(request.body.book.sewing.updates[0].time),
                                 }
                             ]
                         },
@@ -101,7 +101,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.book.centre_pin.updates[0].done,
-                                    time: request.body.book.centre_pin.updates[0].time,
+                                    time: new Date(request.body.book.centre_pin.updates[0].time),
                                 }
                             ]
                         },
@@ -111,7 +111,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.book.finishing.updates[0].done,
-                                    time: request.body.book.finishing.updates[0].time,
+                                    time: new Date(request.body.book.finishing.updates[0].time),
                                 }
                             ]
                         },
@@ -121,7 +121,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.book.packing.updates[0].done,
-                                    time: request.body.book.packing.updates[0].time,
+                                    time: new Date(request.body.book.packing.updates[0].time),
                                 }
                             ]
                         },
@@ -131,7 +131,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.book.dispatch.updates[0].done,
-                                    time: request.body.book.dispatch.updates[0].time,
+                                    time: new Date(request.body.book.dispatch.updates[0].time),
                                 }
                             ]
                         },
@@ -141,7 +141,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.book.challan.updates[0].done,
-                                    time: request.body.book.challan.updates[0].time,
+                                    time: new Date(request.body.book.challan.updates[0].time),
                                 }
                             ]
                         },
@@ -151,7 +151,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.book.bill.updates[0].done,
-                                    time: request.body.book.bill.updates[0].time,
+                                    time: new Date(request.body.book.bill.updates[0].time),
                                 }
                             ]
                         }
@@ -192,7 +192,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.cover.printing.updates[0].done,
-                                    time: request.body.cover.printing.updates[0].time,
+                                    time: new Date(request.body.cover.printing.updates[0].time),
                                     sets_done: '0'
                                 }
                             ]
@@ -203,7 +203,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.cover.lamination.updates[0].done,
-                                    time: request.body.cover.lamination.updates[0].time,
+                                    time: new Date(request.body.cover.lamination.updates[0].time),
                                 }
                             ]
                         },
@@ -213,7 +213,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.cover.creasing.updates[0].done,
-                                    time: request.body.cover.creasing.updates[0].time,
+                                    time: new Date(request.body.cover.creasing.updates[0].time),
                                 }
                             ]
                         },
@@ -223,7 +223,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.cover.binding.updates[0].done,
-                                    time: request.body.cover.binding.updates[0].time,
+                                    time: new Date(request.body.cover.binding.updates[0].time),
                                 }
                             ]
                         },
@@ -233,7 +233,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.cover.packing.updates[0].done,
-                                    time: request.body.cover.packing.updates[0].time,
+                                    time: new Date(request.body.cover.packing.updates[0].time),
                                 }
                             ]
                         },
@@ -243,7 +243,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.cover.dispatch.updates[0].done,
-                                    time: request.body.cover.dispatch.updates[0].time,
+                                    time: new Date(request.body.cover.dispatch.updates[0].time),
                                 }
                             ]
                         },
@@ -253,7 +253,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.cover.challan.updates[0].done,
-                                    time: request.body.cover.challan.updates[0].time,
+                                    time: new Date(request.body.cover.challan.updates[0].time),
                                 }
                             ]
                         },
@@ -263,7 +263,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.cover.bill.updates[0].done,
-                                    time: request.body.cover.bill.updates[0].time,
+                                    time: new Date(request.body.cover.bill.updates[0].time),
                                 }
                             ]
                         }
@@ -305,7 +305,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.box.printing.updates[0].done,
-                                    time: request.body.box.printing.updates[0].time,
+                                    time: new Date(request.body.box.printing.updates[0].time),
                                     sets_done: '0'
                                 }
                             ]
@@ -316,7 +316,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.box.lamination.updates[0].done,
-                                    time: request.body.box.lamination.updates[0].time,
+                                    time: new Date(request.body.box.lamination.updates[0].time),
                                 }
                             ]
                         },
@@ -326,7 +326,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.box.uv.updates[0].done,
-                                    time: request.body.box.uv.updates[0].time,
+                                    time: new Date(request.body.box.uv.updates[0].time),
                                 }
                             ]
                         },
@@ -336,7 +336,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.box.embossing.updates[0].done,
-                                    time: request.body.box.embossing.updates[0].time,
+                                    time: new Date(request.body.box.embossing.updates[0].time),
                                 }
                             ]
                         },
@@ -346,7 +346,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.box.foiling.updates[0].done,
-                                    time: request.body.box.foiling.updates[0].time,
+                                    time: new Date(request.body.box.foiling.updates[0].time),
                                 }
                             ]
                         },
@@ -356,7 +356,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.box.die_cut.updates[0].done,
-                                    time: request.body.box.die_cut.updates[0].time,
+                                    time: new Date(request.body.box.die_cut.updates[0].time),
                                 }
                             ]
                         },
@@ -366,7 +366,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.box.pasting.updates[0].done,
-                                    time: request.body.box.pasting.updates[0].time,
+                                    time: new Date(request.body.box.pasting.updates[0].time),
                                 }
                             ]
                         },
@@ -376,7 +376,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.box.packing.updates[0].done,
-                                    time: request.body.box.packing.updates[0].time,
+                                    time: new Date(request.body.box.packing.updates[0].time),
                                 }
                             ]
                         },
@@ -386,7 +386,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.box.dispatch.updates[0].done,
-                                    time: request.body.box.dispatch.updates[0].time,
+                                    time: new Date(request.body.box.dispatch.updates[0].time),
                                 }
                             ]
                         },
@@ -396,7 +396,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.box.challan.updates[0].done,
-                                    time: request.body.box.challan.updates[0].time,
+                                    time: new Date(request.body.box.challan.updates[0].time),
                                 }
                             ]
                         },
@@ -406,7 +406,7 @@ var postJTProcesses = function (request, response) {
                                 {
 
                                     done: request.body.box.bill.updates[0].done,
-                                    time: request.body.box.bill.updates[0].time,
+                                    time: new Date(request.body.box.bill.updates[0].time),
                                 }
                             ]
                         }
@@ -783,7 +783,7 @@ var updateProgress = function (request, response) {
             } else if (emp == 'printing' || emp == 'folding') {
 
                 var arrObj = {
-                    time: request.body.time,
+                    time: new Date(request.body.time),
                     done: request.body.done,
                     sets_done: request.body.sets_done
                 };
@@ -862,7 +862,7 @@ var updateProgress = function (request, response) {
 
 
                 var arrObj = {
-                    time: request.body.time,
+                    time: new Date(request.body.time),
                     done: request.body.done
                 };
 
