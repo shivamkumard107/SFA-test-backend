@@ -73,7 +73,7 @@ var postJt = function (request, response) {
                 wt: request.body.wt,
                 priority: request.body.priority,
                 image: request.body.image,
-                isDelivered: request.body.isDelivered,
+                isDelivered: false,
 
                 Job: {
                     name: request.body.Job.name,
