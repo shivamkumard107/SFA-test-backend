@@ -766,7 +766,7 @@ var updateProgress = function (request, response) {
 
             var empDepartmentObject = job[emp];
 
-            if (emp == 'designing' || emp == 'ferro' || emp == 'plates') {
+            if (emp == 'designing' || emp === 'ferro' || emp == 'plates') {
                 //Change isDone
                 empDepartmentObject.isDone = true;
                 db.collection('JobTicketProcesses').update({wt_id: request.query.wt}, {$set: ticketProcesses}, function (err, resp) {

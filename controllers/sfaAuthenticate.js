@@ -93,6 +93,56 @@ var login = function (request, response) {
     });
 };
 
+var updatePassword = function (request, response) {
+
+    mongoClient.connect(url, function (err, client) {
+
+        var db = client.db(dbName);
+
+        var query = {
+            mobile: request.body.mobile,
+            pass: request.body.pass
+        };
+
+
+        var negativeJson = {
+            'success' : false,
+            'message' : 'Incorrect password entered'
+        };
+
+        var positiveJson = {
+            'success' : true,
+            'message' : 'Password change successful'
+        };
+
+
+
+        db.collection('employee').findOne(query, function (err, resp) {
+            if (resp) {
+                if(request.body.update && request.body.update !== ''){
+                    resp.pass = request.body.update;
+                } else {
+                    response.send(negativeJson);
+                }
+
+                db.collection('employee').update(query, {$set : resp}, function (err, res) {
+                    if(err) throw err;
+                    response.send(positiveJson);
+                });
+
+
+            } else {
+
+                response.send(negativeJson);
+            }
+
+        });
+
+
+
+    });
+};
+
 var getEmployees = function (request, response) {
     mongoClient.connect(url, function (err, client) {
 
@@ -110,6 +160,7 @@ var getEmployees = function (request, response) {
 module.exports = {
     register: register,
     login: login,
-    getEmployees: getEmployees
+    getEmployees: getEmployees,
+    updatePassword : updatePassword
 };
 

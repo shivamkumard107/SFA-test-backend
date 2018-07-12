@@ -56,9 +56,6 @@ var postJt = function (request, response) {
         // moment(delDate, 'yyyy-MM-dd').toISOString();
         // delDate = delDate.toDate();
 
-        var currDate = new Date(request.body.date);
-        var delDate = new Date(request.body.deliveryDate);
-
 
         var jt =
             {
