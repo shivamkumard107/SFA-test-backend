@@ -147,20 +147,6 @@
             console.log(startDate);
             console.log(endDate);
 
-            // db.collection('JobTicket').find(
-            //     {
-            //         deliveryDate : {
-            //             $gte : startDate,
-            //             $lt : endDate
-            //         }
-            //     }
-            // ).toArray(function (mongoError, ticket) {
-            //
-            //     if(mongoError) throw mongoError;
-            //     response.send(ticket);
-            //
-            // });
-
 
             db.collection("JobTicket").aggregate([
                 {
@@ -198,12 +184,80 @@
         });
     };
 
+//Get ticket by client which are delivered
+    var searchDeliveredTicketsByClientOrJob = function(request, response){
+        mongoClient.connect(url, function(err, client){
+
+            var db = client.db(dbName);
+
+            // console.log(request.query.emp);
+            // var emp = request.query.emp;
+            var regexRequest = request.query.reg;
+            var regExpression = new RegExp(regexRequest);
+
+
+            db.collection("JobTicket").aggregate([
+                {
+                    $unwind: "$wt"
+                },
+                {
+                    $lookup:
+                        {
+                            from: "JobTicketProcesses",
+                            localField: "wt",
+                            foreignField: "wt_id",
+                            as: "processes"
+                        }
+                }
+                ,
+                {
+                    $match : {
+                        $and :[
+                            {
+                                isDelivered : true
+                            },
+                            {
+                                $or : [
+                                    {
+                                        'Client.name' : {
+                                            $regex : regExpression,
+                                            $options: 'i'
+                                        }
+                                    },
+                                    {
+                                        'Job.name' : {
+                                            $regex : regExpression,
+                                            $options: 'i'
+                                        }
+
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+
+            ]).toArray(function (mongoError, resp) {
+                if(mongoError) throw mongoError;
+
+
+                // console.log(resp);
+                response.send(resp);
+
+            });
+
+
+        });
+    };
+
+
 
 
     module.exports = {
         getTaskByClientRegex : getTaskByClientRegex,
         getTaskByJobNameRegex : getTaskByJobNameRegex,
-        getJtByDate : getJtByDate
+        getJtByDate : getJtByDate,
+        searchDeliveredTicketsByClientOrJob : searchDeliveredTicketsByClientOrJob
     };
 
     // .find(

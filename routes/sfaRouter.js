@@ -41,9 +41,9 @@ sfaRouter.route('/test').get(test.getAllJt);
 sfaRouter.route('/task/client').get(sfaRegex.getTaskByClientRegex);
 //task/job?emp=printing&reg=str
 sfaRouter.route('/task/jobname').get(sfaRegex.getTaskByJobNameRegex);
-
 // http://localhost:3000/date?startDate=1999-11-10&&endDate=2002-11-10
 sfaRouter.route('/task/date').get(sfaRegex.getJtByDate);
+sfaRouter.route('/task/delivered').get(sfaRegex.searchDeliveredTicketsByClientOrJob);
 
 
 //Admin apis
