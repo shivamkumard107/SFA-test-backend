@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7979e5a2-2d3c-486c-b0cb-cf65bec32fbc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/sfaRegexTicket.js" afterPath="$PROJECT_DIR$/controllers/sfaRegexTicket.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/test.js" afterPath="$PROJECT_DIR$/controllers/test.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/sfaRouter.js" afterPath="$PROJECT_DIR$/routes/sfaRouter.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,78 +21,18 @@
       <file leaf-file-name="sfaProcesses.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/sfaProcesses.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
-              <caret line="740" column="0" lean-forward="true" selection-start-line="671" selection-start-column="0" selection-end-line="740" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="462" column="0" lean-forward="false" selection-start-line="462" selection-start-column="0" selection-end-line="665" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sfaAuthenticate.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sfaAuthenticate.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/sfaAuthenticate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1635">
-              <caret line="109" column="52" lean-forward="true" selection-start-line="108" selection-start-column="12" selection-end-line="109" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sfaJTControllers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/sfaJTControllers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="971">
-              <caret line="67" column="65" lean-forward="true" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sfaRegexTicket.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/sfaRegexTicket.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="216" column="51" lean-forward="false" selection-start-line="216" selection-start-column="51" selection-end-line="216" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sfaRouter.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/sfaRouter.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="45" column="83" lean-forward="false" selection-start-line="45" selection-start-column="83" selection-end-line="45" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="misc.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/misc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="73" column="22" lean-forward="false" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="globalAccess.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/globalAccess.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+            <state relative-caret-position="1597">
+              <caret line="109" column="52" lean-forward="false" selection-start-line="108" selection-start-column="12" selection-end-line="109" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -124,14 +64,14 @@
       <list>
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/controllers/test.js" />
         <option value="$PROJECT_DIR$/controllers/sfaProcesses.js" />
         <option value="$PROJECT_DIR$/controllers/sfaJTControllers.js" />
         <option value="$PROJECT_DIR$/controllers/sfaAuthenticate.js" />
         <option value="$PROJECT_DIR$/controllers/misc.js" />
         <option value="$PROJECT_DIR$/routes/globalAccess.js" />
-        <option value="$PROJECT_DIR$/routes/sfaRouter.js" />
         <option value="$PROJECT_DIR$/controllers/sfaRegexTicket.js" />
+        <option value="$PROJECT_DIR$/routes/sfaRouter.js" />
+        <option value="$PROJECT_DIR$/controllers/test.js" />
       </list>
     </option>
   </component>
@@ -168,7 +108,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,6 +145,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -264,12 +204,13 @@
       <workItem from="1528454524702" duration="511000" />
       <workItem from="1528482689608" duration="1124000" />
       <workItem from="1528972594959" duration="17000" />
-      <workItem from="1531431116515" duration="5713000" />
+      <workItem from="1531431116515" duration="6605000" />
+      <workItem from="1531505368468" duration="34000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36647000" />
+    <option name="totallyTimeSpent" value="37573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -280,7 +221,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35350758" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35350758" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3232462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -619,18 +560,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/sfaAuthenticate.js">
+    <entry file="file://$PROJECT_DIR$/controllers/sfaProcesses.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1635">
-          <caret line="109" column="52" lean-forward="true" selection-start-line="108" selection-start-column="12" selection-end-line="109" selection-end-column="52" />
+        <state relative-caret-position="0">
+          <caret line="462" column="0" lean-forward="false" selection-start-line="462" selection-start-column="0" selection-end-line="665" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/globalAccess.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        <state relative-caret-position="478">
+          <caret line="105" column="17" lean-forward="false" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -643,42 +592,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/sfaJTControllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="971">
-          <caret line="67" column="65" lean-forward="true" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/sfaRouter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="45" column="83" lean-forward="false" selection-start-line="45" selection-start-column="83" selection-end-line="45" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/sfaProcesses.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="740" column="0" lean-forward="true" selection-start-line="671" selection-start-column="0" selection-end-line="740" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="34" column="44" lean-forward="false" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/sfaRegexTicket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="216" column="51" lean-forward="false" selection-start-line="216" selection-start-column="51" selection-end-line="216" selection-end-column="51" />
+        <state relative-caret-position="650">
+          <caret line="230" column="41" lean-forward="false" selection-start-line="230" selection-start-column="41" selection-end-line="230" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/globalAccess.js">
+    <entry file="file://$PROJECT_DIR$/controllers/sfaJTControllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+        <state relative-caret-position="650">
+          <caret line="67" column="65" lean-forward="false" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/sfaAuthenticate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1597">
+          <caret line="109" column="52" lean-forward="false" selection-start-line="108" selection-start-column="12" selection-end-line="109" selection-end-column="52" />
           <folding />
         </state>
       </provider>

@@ -70,8 +70,8 @@ var reportBug = function (request, response) {
         var data = {
             type : request.body.type,
             date : new Date(request.body.date),
-            details : request.body.body,
-            reportedBy :   request.body.noticeBy
+            details : request.body.details,
+            reportedBy :   request.body.reportedBy
         };
 
         db.collection('bugs').insert(data, function (err, resp) {

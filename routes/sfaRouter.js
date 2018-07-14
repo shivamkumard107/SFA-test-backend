@@ -32,7 +32,7 @@ sfaRouter.route('/update').post(sfaProcessesController.updateProgress);
 
 
 //test
-sfaRouter.route('/test').get(test.getAllJt);
+sfaRouter.route('/test').get(test.countEmpJt);
 // sfaRouter.route('/date').get(test.getJtByDate);
 
 
