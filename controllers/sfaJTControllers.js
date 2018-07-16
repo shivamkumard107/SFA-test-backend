@@ -106,6 +106,7 @@ var postJt = function (request, response) {
         db.collection('JobTicket').insert(jt, function (err, resp) {
             if (err) throw err;
 
+            console.log(request);
             var idArr = resp['ops'];
             var wt_id = idArr[0].wt;
             console.log(wt_id);
