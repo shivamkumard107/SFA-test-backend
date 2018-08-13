@@ -13,7 +13,7 @@ var postNotice = function (request, response) {
        var db = client.db(dbName);
 
        console.log('System date is ' + new Date().toString());
-       console.log('System date is ' + new Date(request.body.date).toString());
+       console.log('Received date is ' + new Date(request.body.date).toString());
 
 
        var data = {
@@ -23,6 +23,7 @@ var postNotice = function (request, response) {
          noticeBy :   request.body.noticeBy
        };
 
+        console.log('Object date is ' + new Date(request.body.date).toString());
         if(!admin.has(data.noticeBy)){
 
             var negativeResponse = {
