@@ -24,6 +24,7 @@ var postNotice = function (request, response) {
        };
 
         console.log('Object date is ' + data.date.toString());
+
         if(!admin.has(data.noticeBy)){
 
             var negativeResponse = {
@@ -42,6 +43,7 @@ var postNotice = function (request, response) {
                     'message' : 'Notice posted'
                 };
 
+                console.log('Added object '+ resp.toString());
                 response.send(positiveResponse);
             });
 
