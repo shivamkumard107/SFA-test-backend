@@ -8,6 +8,7 @@ var dbName = require('./../routes/globalAccess.js').dbName;
 
 var postJTProcesses = function (request, response) {
 
+    console.log(new Date());
     console.log(request.body);
     mongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);
@@ -464,7 +465,7 @@ var getAllJTProcesses = function (request, response) {
 var getQuery = function getQuery(emp) {
 
     var q = null;
-    if (emp == 'designing') {
+    if (emp === 'designing') {
         q = {
             $or: [
                 {
@@ -478,7 +479,7 @@ var getQuery = function getQuery(emp) {
                 }
             ]
         };
-    } else if (emp == 'ferro') {
+    } else if (emp === 'ferro') {
         q = {
             $or: [
                 {
@@ -492,7 +493,7 @@ var getQuery = function getQuery(emp) {
                 }
             ]
         };
-    } else if (emp == 'plates') {
+    } else if (emp === 'plates') {
         q = {
             $or: [
                 {
@@ -506,7 +507,7 @@ var getQuery = function getQuery(emp) {
                 }
             ]
         };
-    } else if (emp == 'printing') {
+    } else if (emp === 'printing') {
         q = {
             $or: [
                 {
@@ -535,7 +536,7 @@ var getQuery = function getQuery(emp) {
             ]
         };
 
-    } else if (emp == 'dispatch') {
+    } else if (emp === 'dispatch') {
         q = {
             $or: [
                 {
@@ -550,7 +551,7 @@ var getQuery = function getQuery(emp) {
             ]
         };
 
-    } else if (emp == 'challan') {
+    } else if (emp === 'challan') {
         q = {
             $or: [
                 {
@@ -565,7 +566,7 @@ var getQuery = function getQuery(emp) {
             ]
         };
 
-    } else if (emp == 'bill') {
+    } else if (emp === 'bill') {
         q = {
             $or: [
                 {
@@ -580,38 +581,38 @@ var getQuery = function getQuery(emp) {
             ]
         };
 
-    } else if (emp == 'folding') {
+    } else if (emp === 'folding') {
 
         q = {
             "processes.book.folding.isRequired": true
         };
 
-    } else if (emp == 'gathering') {
+    } else if (emp === 'gathering') {
         q = {
             "processes.book.folding.isRequired": true
         };
 
-    } else if (emp == 'perfect') {
+    } else if (emp === 'perfect') {
         q = {
             "processes.book.perfect.isRequired": true
         };
 
-    } else if (emp == 'sewing') {
+    } else if (emp === 'sewing') {
         q = {
             "processes.book.sewing.isRequired": true
         };
 
-    } else if (emp == 'centre_pin') {
+    } else if (emp === 'centre_pin') {
         q = {
             "processes.book.centre_pin.isRequired": true
         };
 
-    } else if (emp == 'finishing') {
+    } else if (emp === 'finishing') {
         q = {
             "processes.book.finishing.isRequired": true
         };
 
-    } else if (emp == 'lamination') {
+    } else if (emp === 'lamination') {
         q = {
             $or: [
                 {
@@ -623,32 +624,32 @@ var getQuery = function getQuery(emp) {
             ]
         };
 
-    } else if (emp == 'uv') {
+    } else if (emp === 'uv') {
         q = {
             "processes.box.uv.isRequired": true
         };
 
-    } else if (emp == 'embossing') {
+    } else if (emp === 'embossing') {
         q = {
             "processes.box.embossing.isRequired": true
         };
 
-    } else if (emp == 'foiling') {
+    } else if (emp === 'foiling') {
         q = {
             "processes.box.foiling.isRequired": true
         };
 
-    } else if (emp == 'die_cut') {
+    } else if (emp === 'die_cut') {
         q = {
             "processes.box.die_cut.isRequired": true
         };
 
-    } else if (emp == 'pasting') {
+    } else if (emp === 'pasting') {
         q = {
             "processes.box.pasting.isRequired": true
         };
 
-    } else if (emp == 'creasing') {
+    } else if (emp === 'creasing') {
         q = {
             "processes.cover.creasing.isRequired": true
         };
@@ -754,9 +755,9 @@ var updateProgress = function (request, response) {
             var jobType = ticketProcesses.job_type;
 
             var job = null;
-            if (jobType == 'Book' || jobType == 'book') {
+            if (jobType === 'Book' || jobType === 'book') {
                 job = ticketProcesses.book;
-            } else if (jobType == 'Box' || jobType == 'box') {
+            } else if (jobType === 'Box' || jobType === 'box') {
                 job = ticketProcesses.box;
             } else {
                 //Cover or cover
@@ -766,7 +767,7 @@ var updateProgress = function (request, response) {
 
             var empDepartmentObject = job[emp];
 
-            if (emp == 'designing' || emp === 'ferro' || emp == 'plates') {
+            if (emp === 'designing' || emp === 'ferro' || emp === 'plates') {
                 //Change isDone
                 empDepartmentObject.isDone = true;
                 db.collection('JobTicketProcesses').update({wt_id: request.query.wt}, {$set: ticketProcesses}, function (err, resp) {
@@ -780,7 +781,7 @@ var updateProgress = function (request, response) {
                 });
 
 
-            } else if (emp == 'printing' || emp == 'folding') {
+            } else if (emp === 'printing' || emp === 'folding') {
 
                 var arrObj = {
                     time: new Date(request.body.time),
@@ -815,7 +816,7 @@ var updateProgress = function (request, response) {
                 var oldValSets = parseInt(arr[arrLength - 1].sets_done);
                 var newValSets = oldValSets + parseInt(arrObj.sets_done);
 
-                if (emp == 'printing') {
+                if (emp === 'printing') {
 
                     if (newValSets > parseInt(ticketProcesses.total_sets)) {
                         var json_response_false = {
