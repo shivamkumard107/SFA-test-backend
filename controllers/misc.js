@@ -43,7 +43,7 @@ var postNotice = function (request, response) {
                     'message' : 'Notice posted'
                 };
 
-                console.log('Added object '+ resp.toString());
+                console.log(resp);
                 response.send(positiveResponse);
             });
 
