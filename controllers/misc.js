@@ -12,6 +12,10 @@ var postNotice = function (request, response) {
 
        var db = client.db(dbName);
 
+       console.log('System date is ' + new Date().toString());
+       console.log('System date is ' + new Date(request.body.date).toString());
+
+
        var data = {
          title : request.body.title,
          date : new Date(request.body.date),
