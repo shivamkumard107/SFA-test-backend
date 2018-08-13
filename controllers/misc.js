@@ -23,7 +23,7 @@ var postNotice = function (request, response) {
          noticeBy :   request.body.noticeBy
        };
 
-        console.log('Object date is ' + new Date(request.body.date).toString());
+        console.log('Object date is ' + data.date.toString());
         if(!admin.has(data.noticeBy)){
 
             var negativeResponse = {
