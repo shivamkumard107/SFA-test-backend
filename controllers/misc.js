@@ -43,7 +43,9 @@ var postNotice = function (request, response) {
                     'message' : 'Notice posted'
                 };
 
-                console.log(resp);
+                console.log('1='+resp.ops[0].date);
+                console.log('2='+new Date(resp.ops[0].date).toUTCString());
+
                 response.send(positiveResponse);
             });
 
