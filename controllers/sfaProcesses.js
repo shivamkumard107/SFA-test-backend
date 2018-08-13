@@ -20,7 +20,6 @@ var postJTProcesses = function (request, response) {
 
             console.log('book');
             var jtProcesses =
-
                 {
 
                     job_type: request.body.job_type,
@@ -678,6 +677,7 @@ var getEmpJt = function (request, response) {
         // console.log(request.query.emp);
         var emp = request.query.emp;
 
+        console.log('Date time is ' + new Date().toString());
         console.log(emp);
         console.log(getQuery(emp));
         var q = getQuery(emp);
