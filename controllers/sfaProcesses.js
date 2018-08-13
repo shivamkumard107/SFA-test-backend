@@ -8,8 +8,8 @@ var dbName = require('./../routes/globalAccess.js').dbName;
 
 var postJTProcesses = function (request, response) {
 
-    console.log(new Date());
-    console.log(request.body);
+    console.log('Date time is ' + new Date().toString());
+    console.log('Body of the processes request' + request.body);
     mongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);
 
