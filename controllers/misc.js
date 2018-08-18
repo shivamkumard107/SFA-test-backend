@@ -12,8 +12,8 @@ var postNotice = function (request, response) {
 
        var db = client.db(dbName);
 
-       console.log('System date is ' + new Date().toString());
-       console.log('Received date is ' + new Date(request.body.date).toString());
+       // console.log('System date is ' + new Date().toString());
+       // console.log('Received date is ' + new Date(request.body.date).toString());
 
 
        var data = {
@@ -43,8 +43,8 @@ var postNotice = function (request, response) {
                     'message' : 'Notice posted'
                 };
 
-                console.log('1='+resp.ops[0].date);
-                console.log('2='+new Date(resp.ops[0].date).toUTCString());
+                // console.log('1='+resp.ops[0].date);
+                // console.log('2='+new Date(resp.ops[0].date).toUTCString());
 
                 response.send(positiveResponse);
             });

@@ -74,6 +74,7 @@ var postJt = function (request, response) {
 
                 Job: {
                     name: request.body.Job.name,
+                    numPages : request.body.Job.numPages,
                     noOfCol: request.body.Job.noOfCol,
                     printRun: request.body.Job.printRun,
                     size: request.body.Job.size,
