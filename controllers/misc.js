@@ -12,12 +12,18 @@ var postNotice = function (request, response) {
 
        var db = client.db(dbName);
 
+       // console.log('System date is ' + new Date().toString());
+       // console.log('Received date is ' + new Date(request.body.date).toString());
+
+
        var data = {
          title : request.body.title,
          date : new Date(request.body.date),
          body : request.body.body,
          noticeBy :   request.body.noticeBy
        };
+
+        console.log('Object date is ' + data.date.toString());
 
         if(!admin.has(data.noticeBy)){
 
@@ -36,6 +42,9 @@ var postNotice = function (request, response) {
                     'success' : true,
                     'message' : 'Notice posted'
                 };
+
+                // console.log('1='+resp.ops[0].date);
+                // console.log('2='+new Date(resp.ops[0].date).toUTCString());
 
                 response.send(positiveResponse);
             });
